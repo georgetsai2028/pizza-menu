@@ -101,6 +101,12 @@ footer{
   letter-spacing: 3px;
   font-weight: 500;
 }
+.pizzas {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4.8rem;
+}
 
 .pizza h3 {
   font-size: 2rem;

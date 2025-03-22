@@ -89,9 +89,9 @@ const Footer = () => {
 function Pizza(props: PizzaProps) {
   const { name, ingredients, price, photoName } = props;
   return (
-    <div className="pizza">
+    <div className="pizzas">
       <img src={photoName} alt={name} />
-      <div>
+      <div className="pizza">
         <h3> {name} </h3>
         <p> {ingredients} </p>
         <p>Price: {price} </p>
