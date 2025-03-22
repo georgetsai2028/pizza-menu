@@ -30,7 +30,18 @@ const Menu = () => {
   return (
     <div className="menu">
       <h2> Our Menu</h2>
-      <Pizza />
+      <Pizza
+        name="Pizza Spinaci"
+        ingredients="Tomato, Mozzarella, Spinach, and Ricotta Cheese"
+        photoName="src/assets/pizzas/spinaci.jpg"
+        price="12.99"
+      />
+      <Pizza
+        name="Pizza Margherita"
+        ingredients="Tomato and Mozarella"
+        photoName="src/assets/pizzas/margherita.jpg"
+        price="10"
+      />
     </div>
   );
 };
@@ -55,11 +66,11 @@ const Footer = () => {
 function Pizza(props: PizzaProps) {
   const { name, ingredients, price, photoName } = props;
   return (
-    <div>
+    <div className="pizza">
       <img src={photoName} alt={name} />
       <h3> {name} </h3>
       <p> {ingredients} </p>
-      <p> {price} </p>
+      <p>Price: {price} </p>
     </div>
   );
 }
