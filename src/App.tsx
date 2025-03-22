@@ -11,6 +11,13 @@ export default function App() {
   );
 }
 
+interface PizzaProps {
+  name: string;
+  ingredients: string;
+  photoName: string;
+  price: string;
+}
+
 const Header = () => {
   return (
     <header className="header">
@@ -44,12 +51,15 @@ const Footer = () => {
     </div>
   );
 };
-function Pizza() {
+
+function Pizza(props: PizzaProps) {
+  const { name, ingredients, price, photoName } = props;
   return (
     <div>
-      <img src={spinachi} alt="spinachi pizza" />
-      <h3> Pizza Spinachi</h3>
-      <p> Tomato, Mozzarella, Spinach, and Ricotta Cheese </p>
+      <img src={photoName} alt={name} />
+      <h3> {name} </h3>
+      <p> {ingredients} </p>
+      <p> {price} </p>
     </div>
   );
 }
