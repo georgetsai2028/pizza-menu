@@ -3,7 +3,7 @@ import spinachi from "./assets/pizzas/spinaci.jpg";
 
 export default function App() {
   return (
-    <div>
+    <div className="mainContainer">
       <Header />
       <Menu />
       <Footer />
@@ -12,12 +12,16 @@ export default function App() {
 }
 
 const Header = () => {
-  return <h1> Puka's Pizzas </h1>;
+  return (
+    <header className="header">
+      <h1> Puka's Pizzas </h1>
+    </header>
+  );
 };
 
 const Menu = () => {
   return (
-    <div>
+    <div className="menu">
       <h2> Our Menu</h2>
       <Pizza />
     </div>
@@ -33,7 +37,6 @@ const Footer = () => {
     hours >= openHour && hours <= closeHour
       ? "We're Open!"
       : "Sorry We're Closed :(";
-  alert(isOpen);
 
   return (
     <div>
@@ -45,7 +48,7 @@ function Pizza() {
   return (
     <div>
       <img src={spinachi} alt="spinachi pizza" />
-      <h1> Pizza Spinachi</h1>
+      <h3> Pizza Spinachi</h3>
       <p> Tomato, Mozzarella, Spinach, and Ricotta Cheese </p>
     </div>
   );
