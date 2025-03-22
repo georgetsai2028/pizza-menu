@@ -6,6 +6,7 @@ export default function App() {
     <div>
       <Header />
       <Pizza />
+      <Footer />
     </div>
   );
 }
@@ -16,7 +17,14 @@ const Header = () => {
 
 const Menu = () => {};
 
-const Footer = () => {};
+const Footer = () => {
+  return (
+    <footer>
+      We're Open 24/7! Today's Date: {new Date().toLocaleDateString()} Current
+      Time: {new Date().toLocaleTimeString()}
+    </footer>
+  );
+};
 
 function Pizza() {
   return (
