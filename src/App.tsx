@@ -5,7 +5,7 @@ export default function App() {
   return (
     <div>
       <Header />
-      <Pizza />
+      <Menu />
       <Footer />
     </div>
   );
@@ -15,7 +15,14 @@ const Header = () => {
   return <h1> Puka's Pizzas </h1>;
 };
 
-const Menu = () => {};
+const Menu = () => {
+  return (
+    <div>
+      <h2> Our Menu</h2>
+      <Pizza />
+    </div>
+  );
+};
 
 const Footer = () => {
   return (
