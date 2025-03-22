@@ -1,5 +1,4 @@
 import "./App.css";
-import spinachi from "./assets/pizzas/spinaci.jpg";
 
 export default function App() {
   return (
@@ -15,7 +14,7 @@ interface PizzaProps {
   name: string;
   ingredients: string;
   photoName: string;
-  price: string;
+  price: number;
 }
 
 const Header = () => {
@@ -34,13 +33,37 @@ const Menu = () => {
         name="Pizza Spinaci"
         ingredients="Tomato, Mozzarella, Spinach, and Ricotta Cheese"
         photoName="src/assets/pizzas/spinaci.jpg"
-        price="12.99"
+        price={12}
       />
       <Pizza
         name="Pizza Margherita"
         ingredients="Tomato and Mozarella"
         photoName="src/assets/pizzas/margherita.jpg"
-        price="10"
+        price={10}
+      />
+      <Pizza
+        name="Pizza Funghi"
+        ingredients="Tomato, mozarella, mushrooms, and onion"
+        photoName="src/assets/pizzas/funghi.jpg"
+        price={12}
+      />
+      <Pizza
+        name="Pizza Salamino"
+        ingredients="Tomato, mozarella, and pepperoni"
+        photoName="src/assets/pizzas/salamino.jpg"
+        price={15}
+      />
+      <Pizza
+        name="Pizza Prosciutto"
+        ingredients="Tomato, mozarella, ham, aragula, and burrata cheese"
+        photoName="src/assets/pizzas/prosciutto.jpg"
+        price={18}
+      />
+      <Pizza
+        name="Focaccia"
+        ingredients="Bread with italian olive oil and rosemary"
+        photoName="src/assets/pizzas/focaccia.jpg"
+        price={6}
       />
     </div>
   );
@@ -68,9 +91,11 @@ function Pizza(props: PizzaProps) {
   return (
     <div className="pizza">
       <img src={photoName} alt={name} />
-      <h3> {name} </h3>
-      <p> {ingredients} </p>
-      <p>Price: {price} </p>
+      <div>
+        <h3> {name} </h3>
+        <p> {ingredients} </p>
+        <p>Price: {price} </p>
+      </div>
     </div>
   );
 }
