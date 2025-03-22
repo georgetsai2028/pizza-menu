@@ -25,14 +25,22 @@ const Menu = () => {
 };
 
 const Footer = () => {
+  const hours = new Date().getHours();
+  const openHour = 12;
+  const closeHour = 22;
+
+  const isOpen =
+    hours >= openHour && hours <= closeHour
+      ? "We're Open!"
+      : "Sorry We're Closed :(";
+  alert(isOpen);
+
   return (
-    <footer>
-      We're Open 24/7! Today's Date: {new Date().toLocaleDateString()} Current
-      Time: {new Date().toLocaleTimeString()}
-    </footer>
+    <div>
+      <footer> {isOpen} </footer>
+    </div>
   );
 };
-
 function Pizza() {
   return (
     <div>
