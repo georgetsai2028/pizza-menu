@@ -94,9 +94,6 @@ const Menu = ({ pizzaData }: MenuProps) => {
   );
 };
 
-{
-}
-
 const Footer = () => {
   const hours = new Date().getHours();
   const openHour = 12;
