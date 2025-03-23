@@ -79,7 +79,7 @@ const Menu = ({ pizzaData }: MenuProps) => {
   return (
     <div className="menu">
       <h2> Our Menu</h2>
-      <div>
+      <ul className="pizzas">
         {pizzaData.map((pizza) => (
           <Pizza
             name={pizza.name}
@@ -89,48 +89,12 @@ const Menu = ({ pizzaData }: MenuProps) => {
             soldOut={pizza.soldOut}
           />
         ))}
-      </div>
+      </ul>
     </div>
   );
 };
 
 {
-  /*<Pizza
-        name="Pizza Spinaci"
-        ingredients="Tomato, Mozzarella, Spinach, and Ricotta Cheese"
-        photoName="src/assets/pizzas/spinaci.jpg"
-        price={12}
-      />
-      <Pizza
-        name="Pizza Margherita"
-        ingredients="Tomato and Mozarella"
-        photoName="src/assets/pizzas/margherita.jpg"
-        price={10}
-      />
-      <Pizza
-        name="Pizza Funghi"
-        ingredients="Tomato, mozarella, mushrooms, and onion"
-        photoName="src/assets/pizzas/funghi.jpg"
-        price={12}
-      />
-      <Pizza
-        name="Pizza Salamino"
-        ingredients="Tomato, mozarella, and pepperoni"
-        photoName="src/assets/pizzas/salamino.jpg"
-        price={15}
-      />
-      <Pizza
-        name="Pizza Prosciutto"
-        ingredients="Tomato, mozarella, ham, aragula, and burrata cheese"
-        photoName="src/assets/pizzas/prosciutto.jpg"
-        price={18}
-      />
-      <Pizza
-        name="Focaccia"
-        ingredients="Bread with italian olive oil and rosemary"
-        photoName="src/assets/pizzas/focaccia.jpg"
-        price={6}
-      />*/
 }
 
 const Footer = () => {
