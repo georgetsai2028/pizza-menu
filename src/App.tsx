@@ -4,7 +4,7 @@ export default function App() {
   return (
     <div className="mainContainer">
       <Header />
-      <Menu />
+      <Menu pizzaData={pizzaData} />
       <Footer />
     </div>
   );
@@ -18,52 +18,51 @@ interface PizzaProps {
   soldOut: boolean;
 }
 
-interface MenuProps{
+interface MenuProps {
   pizzaData: PizzaProps[];
 }
 
-
-const pizzaData : PizzaProps[]= [
+const pizzaData: PizzaProps[] = [
   {
     name: "Focaccia",
     ingredients: "Bread with italian olive oil and rosemary",
     price: 6,
-    photoName: "pizzas/focaccia.jpg",
+    photoName: "src/assets/pizzas/focaccia.jpg",
     soldOut: false,
   },
   {
     name: "Pizza Margherita",
     ingredients: "Tomato and mozarella",
     price: 10,
-    photoName: "pizzas/margherita.jpg",
+    photoName: "src/assets/pizzas/margherita.jpg",
     soldOut: false,
   },
   {
     name: "Pizza Spinaci",
     ingredients: "Tomato, mozarella, spinach, and ricotta cheese",
     price: 12,
-    photoName: "pizzas/spinaci.jpg",
+    photoName: "src/assets/pizzas/spinaci.jpg",
     soldOut: false,
   },
   {
     name: "Pizza Funghi",
     ingredients: "Tomato, mozarella, mushrooms, and onion",
     price: 12,
-    photoName: "pizzas/funghi.jpg",
+    photoName: "src/assets/pizzas/funghi.jpg",
     soldOut: false,
   },
   {
     name: "Pizza Salamino",
     ingredients: "Tomato, mozarella, and pepperoni",
     price: 15,
-    photoName: "pizzas/salamino.jpg",
+    photoName: "src/assets/pizzas/salamino.jpg",
     soldOut: true,
   },
   {
     name: "Pizza Prosciutto",
     ingredients: "Tomato, mozarella, ham, aragula, and burrata cheese",
     price: 18,
-    photoName: "pizzas/prosciutto.jpg",
+    photoName: "src/assets/pizzas/prosciutto.jpg",
     soldOut: false,
   },
 ];
@@ -76,13 +75,27 @@ const Header = () => {
   );
 };
 
-const Menu = ({pizzaData} : MenuProps) => {
+const Menu = ({ pizzaData }: MenuProps) => {
   return (
     <div className="menu">
       <h2> Our Menu</h2>
-      <div>{pizzaData.map((pizza) => (<Pizza name ={pizza.name} ingredients={pizza.ingredients} price={pizza.price} photoName={pizza.photoName} soldOut={pizza.soldOut}))}</div>
+      <div>
+        {pizzaData.map((pizza) => (
+          <Pizza
+            name={pizza.name}
+            ingredients={pizza.ingredients}
+            price={pizza.price}
+            photoName={pizza.photoName}
+            soldOut={pizza.soldOut}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
-      {/*<Pizza
+{
+  /*<Pizza
         name="Pizza Spinaci"
         ingredients="Tomato, Mozzarella, Spinach, and Ricotta Cheese"
         photoName="src/assets/pizzas/spinaci.jpg"
@@ -117,10 +130,8 @@ const Menu = ({pizzaData} : MenuProps) => {
         ingredients="Bread with italian olive oil and rosemary"
         photoName="src/assets/pizzas/focaccia.jpg"
         price={6}
-      />*/}
-    </div>
-  );
-};
+      />*/
+}
 
 const Footer = () => {
   const hours = new Date().getHours();
