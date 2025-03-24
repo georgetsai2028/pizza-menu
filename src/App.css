@@ -84,6 +84,11 @@ footer{
   font-size: 1.4rem;
 }
 
+.orderButton{
+  background-color: #edc84b;
+  color: black;
+}
+
 .menu {
   display: flex;
   flex-direction: column;

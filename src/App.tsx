@@ -101,13 +101,16 @@ const Footer = () => {
 
   const isOpen =
     hours >= openHour && hours <= closeHour
-      ? "We're Open!"
+      ? "We're Open until 22:00! Click here to order online "
       : "Sorry We're Closed :(";
 
   return (
-    <div>
-      <footer> {isOpen} </footer>
-    </div>
+    <footer>
+      <div className="order">
+        <p> {isOpen}</p>
+        <button className="orderButton">Order</button>
+      </div>
+    </footer>
   );
 };
 
