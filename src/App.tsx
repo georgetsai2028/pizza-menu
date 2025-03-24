@@ -83,13 +83,7 @@ const Menu = ({ pizzaData }: MenuProps) => {
       <h2> Our Menu</h2>
       <ul className="pizzas">
         {pizzas.map((pizza) => (
-          <Pizza
-            name={pizza.name}
-            ingredients={pizza.ingredients}
-            price={pizza.price}
-            photoName={pizza.photoName}
-            soldOut={pizza.soldOut}
-          />
+          <Pizza pizzaObj={pizza} key={pizza.name} />
         ))}
       </ul>
     </div>
@@ -106,10 +100,7 @@ const Footer = () => {
   return (
     <footer>
       {isOpen ? (
-        <div className="order">
-          <h2> We're Open until 22:00! Click here to order online </h2>
-          <button className="orderButton">Order</button>
-        </div>
+        <Order />
       ) : (
         <div>
           <h2> "Sorry We're Closed :( Please come back at 12:00</h2>
@@ -119,10 +110,19 @@ const Footer = () => {
   );
 };
 
-function Pizza(props: PizzaProps) {
-  const { name, ingredients, price, photoName, soldOut } = props;
+const Order = () => {
+  return (
+    <div className="order">
+      <h2> We're Open until 22:00! Click here to order online </h2>
+      <button className="orderButton">Order</button>
+    </div>
+  );
+};
+
+function Pizza({ pizzaObj }: { pizzaObj: PizzaProps }) {
+  const { name, ingredients, price, photoName, soldOut } = pizzaObj;
   if (soldOut) {
-    return <div> Sorry this pizza is sold out</div>;
+    return null;
   }
 
   return (
