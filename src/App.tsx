@@ -76,11 +76,13 @@ const Header = () => {
 };
 
 const Menu = ({ pizzaData }: MenuProps) => {
+  const pizzas = pizzaData;
+
   return (
     <div className="menu">
       <h2> Our Menu</h2>
       <ul className="pizzas">
-        {pizzaData.map((pizza) => (
+        {pizzas.map((pizza) => (
           <Pizza
             name={pizza.name}
             ingredients={pizza.ingredients}
@@ -99,17 +101,20 @@ const Footer = () => {
   const openHour = 12;
   const closeHour = 22;
 
-  const isOpen =
-    hours >= openHour && hours <= closeHour
-      ? "We're Open until 22:00! Click here to order online "
-      : "Sorry We're Closed :(";
+  const isOpen = hours >= openHour && hours <= closeHour;
 
   return (
     <footer>
-      <div className="order">
-        <p> {isOpen}</p>
-        <button className="orderButton">Order</button>
-      </div>
+      {isOpen ? (
+        <div className="order">
+          <h2> We're Open until 22:00! Click here to order online </h2>
+          <button className="orderButton">Order</button>
+        </div>
+      ) : (
+        <div>
+          <h2> "Sorry We're Closed :( Please come back at 12:00</h2>
+        </div>
+      )}
     </footer>
   );
 };
