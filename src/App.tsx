@@ -63,7 +63,7 @@ const pizzaData: PizzaProps[] = [
     ingredients: "Tomato, mozarella, ham, aragula, and burrata cheese",
     price: 18,
     photoName: "src/assets/pizzas/prosciutto.jpg",
-    soldOut: false,
+    soldOut: true,
   },
 ];
 
@@ -81,6 +81,11 @@ const Menu = ({ pizzaData }: MenuProps) => {
   return (
     <div className="menu">
       <h2> Our Menu</h2>
+
+      <p>
+        Authentic Italian Cuisine. 6 Pizza's passed down from generations of
+        pizzaiolo's. All from our stone oven, all organic, all delicious.
+      </p>
       <ul className="pizzas">
         {pizzas.map((pizza) => (
           <Pizza pizzaObj={pizza} key={pizza.name} />
@@ -121,18 +126,15 @@ const Order = () => {
 
 function Pizza({ pizzaObj }: { pizzaObj: PizzaProps }) {
   const { name, ingredients, price, photoName, soldOut } = pizzaObj;
-  if (soldOut) {
-    return null;
-  }
 
   return (
-    <div className="pizzas">
+    <li className={`pizzas ${soldOut ? "sold-out" : ""}`}>
       <img src={photoName} alt={name} />
       <div className="pizza">
         <h3> {name} </h3>
         <p> {ingredients} </p>
-        <p>Price: {price} </p>
+        <span>{soldOut ? "Sold Out" : price} </span>
       </div>
-    </div>
+    </li>
   );
 }

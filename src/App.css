@@ -126,6 +126,15 @@ img {
   padding: 0.4rem 0;
 }
 
+.pizzas.sold-out {
+  color: #888;
+}
+
+.pizzas.sold-out img {
+  filter: grayscale();
+  opacity: 0.8;
+}
+
 .pizza h3 {
   font-size: 2rem;
   font-weight: 400;
