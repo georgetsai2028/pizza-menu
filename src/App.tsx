@@ -120,7 +120,11 @@ const Footer = () => {
 };
 
 function Pizza(props: PizzaProps) {
-  const { name, ingredients, price, photoName } = props;
+  const { name, ingredients, price, photoName, soldOut } = props;
+  if (soldOut) {
+    return <div> Sorry this pizza is sold out</div>;
+  }
+
   return (
     <div className="pizzas">
       <img src={photoName} alt={name} />
